@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página IES Donoso Cortés</title>
+  <meta name="Author" content="Marisol">
+      <meta name="Description" content="repaso del HEAD y los estilos en                 cascada">
+       <meta name="Keywords" content="HTML, CSS, JavaScript, SQL, PHP, jQuery, XML,DOM,Bootstrap,Python">
+  <link rel="shortcut icon" href="imagen/favicon.jpg"  type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: black;
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid black;
+    }
+
+    
+
+    nav {
+      background-color: grey;
+      text-align: center;
+      padding: 15px;
+      border: 2px solid black;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0px;
+      padding: 5px 10px;
+      background-color: #e74c3c;
+      border-radius: 5px;
+    }
+
+    main, aside {
+      display: inline-block;
+      vertical-align: top;
+      margin: 10px;
+    }
+
+    aside {
+      width: 25%;
+      background-color: grey;
+      border: 2px solid black;
+      text-align: center;
+      padding: 10px;
+    }
+
+    aside a {
+      display: block;
+      margin: 8px 0;
+      background-color: black;
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    main {
+      width: 52%;
+      background-color: grey;
+      border: 2px solid black;
+      padding: 15px;
+      text-align: left;
+    }
+
+    details {
+      margin-bottom: 10px;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: grey;
+      border: 2px solid black;
+      margin: 10px;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+  <!---------para Facebook--------->
+    <meta property="og:description" content="Instituto" />
+<meta property="og:title" content="IES DONOSO CORTES">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aalejandrooo.github.io/">&gt;
+<meta property="og:image" content="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTXm0QhnaUgjQ1GYl_6jCpnKUpg-KNvJ0vktVMtyNgUMbbVZkUaLxuzyZSLWwbDJbJpjqtsbI646rwcYtoV4DYGlFZqWMIcBWnQvfI2B6w">
+&gt;
+
+<!-- 🐦 Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IES DONOSO CORTES">
+<meta name="twitter:description" content="Instituto">
+<meta name="twitter:image" content="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTXm0QhnaUgjQ1GYl_6jCpnKUpg-KNvJ0vktVMtyNgUMbbVZkUaLxuzyZSLWwbDJbJpjqtsbI646rwcYtoV4DYGlFZqWMIcBWnQvfI2B6w">
+<meta name="twitter:site" content="@EDteamLat"> 
+
+<!-- 🟢 WhatsApp -->
+<!-- WhatsApp usa principalmente las etiquetas Open Graph de Facebook -->
+<!-- Pero puedes reforzarlas con estas etiquetas adicionales -->
+<meta property="og:site_name" content="IES DONOSO CORTES">
+<meta property="og:locale" content="es_ES">
+<meta name="description" content="Instituto">
+</head>
+<body>
+
+  <header>
+    <h1 style="color: #ddd;">IES DONOSO CORTÉS</h1>
+    <img src="insti.png" alt="Logo">
+  </header>
+
+  <nav>
+    <a href="bolitas.html">Bolitas</a>
+    <a href="paginadhcp.html">DHCP</a>
+    <a href="paginadiv.html">Div</a>
+    <a href="estilos.html">Estilos</a>
+    <a href="miprimeraweb.html">Mi Web</a>
+    <a href="etiquetas_de_texto.html">Texto</a>
+  </nav>
+
+  <aside>
+    <h3>Enlaces</h3>
+    <a href="https://maps.google.com">Google Maps</a>
+    <a href="https://rayuela.educarex.es/">Rayuela</a>
+    <a href="https://translate.google.com">Traductor</a>
+  </aside>
+
+  <main>
+    <details>
+      <summary style="font-size: 170%;" >DHCP</summary>
+      <p>El protocolo DHCP (Dynamic Host Configuration Protocol) asigna automáticamente direcciones IP a los dispositivos de una red.</p>
+    </details>
+
+    <details>
+      <summary style="font-size: 170%;" >Ventajas</summary>
+      <p>- Evita conflictos de direcciones IP.<br>
+         - Usa un modelo cliente-servidor.<br>
+         - Facilita la administración centralizada de direcciones.<br>
+         - Permite la integración automática en la red.</p>
+    </details>
+    <details>
+      <summary style="font-size: 170%;" >Funcionamiento</summary>
+      <p>- Un servidor DHCP asigna direcciones dentro de un rango prefijado. Si hay IP
+estática perteneciente al rango asignado, el cliente solicitará y comprobará,
+otra dirección IP, hasta que obtenga una dirección IP no asignada a ningún
+otro equipo de la red.
+Un cliente intentará localizar un servidor DHCP:
+- Si no lo encuentra no podrá conectarse a la red.
+- Si lo encuentra le proporcionará, para un periodo predeterminado, una
+configuración IP que le permitirá́comunicarse con la red y cuando
+transcurra el 50% del periodo, el cliente solicitará una renovación de la
+misma.</p>
+    </details>
+    <details>
+      <summary style="font-size: 170%;" >Asignaciones</summary>
+      <p> Asignación manual El administrador de red
+pone manualmente la dirección IP del cliente DHCP
+en el servidor DHCP. El DHCP se usa para dar al
+cliente DHCP el valor de esta dirección IP
+configurada manualmente.
+b) Asignación automática No se requiere asignar
+manualmente direcciones IP. El servidor DHCP
+asigna al cliente DHCP, en el primer contacto, una
+dirección IP permanente que no podrá reutilizar
+ningún otro cliente DHCP</p>
+    </details>
+  </main>
+
+  <footer>
+    <p>© 2025 IES Donoso Cortés</p>
+  </footer>
+
+</body>
+</html>
