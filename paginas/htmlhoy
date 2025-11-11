@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>mi primera web</title>
+      <style>
+       
+       
+       p{font-size: 16px;font-family:arial;background-color: aquamarine;color: pink;}
+table, th, td {
+  border:2px solid rgb(7, 145, 41);}
+       </style>
+        
+    </head>
+    <body>
+            <p>Esto es un parrafo</p>
+        <h1>Esta es mi primera cabecera</h1>
+        <a href="https://www.w3schools.com/"> Tutorial sencillo</a><br><p></p> 
+        <a href="https://www.w3schools.com/default.asp">W3schools</a><br>
+        <a href="https://validator.w3.org/nu">Validator</a><br>
+        <a href="https://www.w3.org/">W3C</a><br>
+        <a href="https://developer.mozilla.org/es/">Mdn</a><br>
+        <p>Esto es un parrafo y </p><br>sigo con el parrafo<p></p>
+        <img src="data:image/jpeg;base64,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"><br>
+        <video width="320" height="240" controls>
+        <source src="videohtml.mp4">
+        </video><p></p>
+        <audio controls>
+        <source src="videohtml.mp3">
+        </audio><p></p>
+        
+<h2>Horario</h2>
+<table style="width:120%">
+  <tr>
+    <th> Horas </th>
+    <th> Lunes </th>
+    <th> Martes </th>
+    <th> Miercoles </th>
+    <th> Jueves </th>
+    <th> Viernes </th>
+  </tr>
+        
+        
+    <td> 8:30-9:25 </td>
+    <td> SASP </td>
+    <td> OPT </td>
+    <td> SOR </td>
+    <td> SER </td>
+    <th rowspan="2">MME</th>
+  <tr>
+    <td> 9:25-10:20 </td>
+    <td> SOR</td>
+    <td> APW </td>
+    <td> SER </td>
+    <td> DASP </td>
+  </tr>
+  <tr>
+    <td>10:20-10:40</td>
+    <th colspan="6">RECREO</th>
+  </tr>
+  
+  <tr>
+    <td> 10:40-11:35 </td>
+    <td> SOR</td>
+    <td> APW </td>
+    <td> SER </td>
+    <td> IPEII </td>
+    <td> SER </td>
+  </tr>
+  <tr>
+    <td> 11:35-12:30 </td>
+    <td> SER </td> 
+    <td> MME </td>
+    <td> IPEII </td>
+    <td> OPT </td>
+    <td> SOR </td>
+  </tr>
+  <tr>
+    <td>12:30-12:40</td>
+    <th colspan="6">RECREO</th>
+  </tr>
+  <tr>
+    <td> 12:40-13:35 </td>
+    <td> SER</td>
+    <td> MME </td>
+    <th rowspan="2">MME</td>
+    <td> APW </td>
+    <td> OPT </td>
+  </tr>
+  <tr>
+    <td>  13:35-14:30 </td>
+    <td> IPEII</td>
+    <td> SOR </td>
+    <td> PI </td>
+    <td> APW </td>
+  </tr>
+</table><p></p>
+<ul>
+  <li>Perros</li>
+  <li>Gatos</li>
+  <li>Caballos</li>
+</ul><p></p>
+<ol>
+  <li>Perros</li>
+  <li>Gatos</li>
+  <li>Caballos</li>
+</ol>
+
+<p style="font-size: 32;color: red;">CSS, o Hojas de Estilo en Cascada, es un lenguaje de estilos que define la apariencia de los documentos HTML, como el color, la fuente, el tamaño, la posición y el diseño de una página web. Separa la estructura del contenido (HTML) de su presentación, lo que permite a los desarrolladores y diseñadores crear sitios web visualmente atractivos y consistentes, facilitando el mantenimiento y la flexibilidad del diseño
+
+ <p> CSS, o Hojas de Estilo en Cascada, es un lenguaje de estilos que define la apariencia de los documentos HTML, como el color, la fuente, el tamaño, la posición y el diseño de una página web. Separa la estructura del contenido (HTML) de su presentación, lo que permite a los desarrolladores y diseñadores crear sitios web visualmente atractivos y consistentes, facilitando el mantenimiento y la flexibilidad del diseño</p>
+ <p> CSS, o Hojas de Estilo en Cascada, es un lenguaje de estilos que define la apariencia de los documentos HTML, como el color, la fuente, el tamaño, la posición y el diseño de una página web. Separa la estructura del contenido (HTML) de su presentación, lo que permite a los desarrolladores y diseñadores crear sitios web visualmente atractivos y consistentes, facilitando el mantenimiento y la flexibilidad del diseño</p>
+
+    </body>
+</html>
