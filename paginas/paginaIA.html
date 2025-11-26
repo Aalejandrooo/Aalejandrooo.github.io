@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inteligencia Artificial</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif;}
+
+body{
+background: linear-gradient(135deg,#0f172a,#1e293b,#334155);
+color:white;
+min-height:100vh;
+display:grid;
+grid-template-rows:auto auto 1fr auto;
+grid-template-columns:300px 1fr;
+grid-template-areas:
+"header header"
+"nav nav"
+"aside main"
+"footer footer";
+gap:15px;
+padding:15px;
+}
+
+/* Header */
+header{
+grid-area:header;
+background: linear-gradient(135deg,#38bdf8,#0ea5e9);
+padding:30px;
+border-radius:15px;
+text-align:center;
+position:relative;
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
+animation:slideDown 0.8s ease-out;
+}
+header h1{
+font-size:2.8rem;
+letter-spacing:3px;
+color:white;
+}
+@keyframes slideDown{
+from{opacity:0; transform:translateY(-20px);}
+to{opacity:1; transform:translateY(0);}
+}
+.imgs-header{
+position:absolute;
+right:25px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+gap:12px;
+}
+.imgs-header img{
+width:90px;
+height:60px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+transition: transform 0.3s, box-shadow 0.3s;
+}
+.imgs-header img:hover{
+transform:scale(1.15) rotate(5deg);
+box-shadow:0 10px 25px rgba(0,0,0,0.7);
+}
+
+/* Nav */
+nav{
+grid-area:nav;
+display:flex;
+justify-content:center;
+gap:30px;
+}
+nav a{
+text-decoration:none;
+font-weight:bold;
+font-size:1.2rem;
+padding:10px 20px;
+border-radius:8px;
+background-color:rgb(179, 29, 179);
+transition:0.3s;
+}
+nav a:hover{
+background:#38bdf8;
+color:#0f172a;
+transform:scale(1.05);
+}
+
+/* Aside */
+aside{
+grid-area:aside;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(8px);
+padding:20px;
+border-radius:15px;
+display:flex;
+flex-direction:column;
+gap:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+aside h2{
+text-align:center;
+margin-bottom:10px;
+font-size:1.6rem;
+color:#38bdf8;
+}
+.card{
+padding:15px;
+border-radius:12px;
+background:rgba(56,189,248,0.2);
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+.card:hover{
+background:rgba(14,165,233,0.4);
+transform:scale(1.05) translateX(5px);
+box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Main */
+main{
+grid-area:main;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(8px);
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.4);
+transition:all 0.5s ease-in-out;
+}
+main h2{
+font-size:2.4rem;
+margin-bottom:20px;
+color:#38bdf8;
+}
+main p{
+font-size:1.25rem;
+line-height:1.8;
+}
+
+/* Footer */
+footer{
+grid-area:footer;
+background: linear-gradient(135deg,#38bdf8,#0ea5e9);
+text-align:center;
+padding:25px;
+border-radius:15px;
+font-size:1.2rem;
+font-weight:bold;
+letter-spacing:1px;
+box-shadow:0 -5px 20px rgba(0,0,0,0.5);
+} </style>
+
+</head>
+<body>
+
+<header>
+    <h1>Inteligencia Artificial</h1>
+    <div class="imgs-header">
+        <img src="https://pontia.tech/wp-content/uploads/2023/10/que-es-chat-gpt-1.jpg" alt="ChatGPT">
+        <img src="https://www.gstatic.com/lamda/images/gemini_aurora_thumbnail_4g_e74822ff0ca4259beb718.png" alt="Gemini">
+        <img src="https://www.internetmatters.org/wp-content/uploads/2025/07/Perplexity-feature.webp" alt="Perplexity">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROvuiHGSZHvh68XOWYqUFLjsGqGQtWFqzkzQ&s" alt="DeepSeek">
+    </div>
+</header>
+
+<nav>
+    <a target="blank" href="https://chatgpt.com/">ChatGPT</a>
+    <a target="blank" href="https://gemini.google.com/">Gemini</a>
+    <a target="blank" href="https://www.perplexity.ai/">Perplexity</a>
+    <a target="blank" href="https://chat.deepseek.com/">DeepSeek</a>
+</nav>
+
+<aside>
+    <h2>IA Disponibles</h2>
+    <div class="card" onclick="mostrar('ChatGPT es un chatbot de inteligencia artificial desarrollado por OpenAI que puede mantener conversaciones en lenguaje natural, generar texto (ensayos, código, emails), responder preguntas, resumir, traducir, crear ideas, y mucho más. Fue lanzado inicialmente al público por OpenAI el 30 de noviembre de 2022 como una interfaz conversacional accesible sobre modelos de lenguaje grandes.')">ChatGPT</div>
+    <div class="card" onclick="mostrar('Gemini es un modelo de inteligencia artificial desarrollado por Google DeepMind / Google como parte de su apuesta por IA avanzada y multimodal. A diferencia de muchos modelos clásicos centrados solo en texto, Gemini está diseñado para ser multimodal: puede procesar y combinar distintos tipos de datos — texto, imágenes, audio, vídeo, código — lo que le permite entender entradas variadas y producir respuestas más ricas. Está concebido para ser muy flexible: no solo funciona en centros de datos potentes, sino que también puede adaptarse a dispositivos menos potentes, lo que permite su uso en móviles o entornos más ligeros.')">Gemini</div>
+    <div class="card" onclick="mostrar('Perplexity es un buscador/generador de respuestas impulsado por inteligencia artificial: combina lo mejor de un buscador web con las capacidades de un chatbot. Su objetivo es ofrecer respuestas directas y conversacionales a las preguntas del usuario — no una lista de enlaces como en un buscador tradicional, sino un resumen explicativo con información sintetizada y fuentes citadas. Fue fundado en 2022.')">Perplexity</div>
+    <div class="card" onclick="mostrar('DeepSeek es una empresa china de inteligencia artificial — y también el nombre de sus modelos de IA generativa. Su sede está en Hangzhou (China). Fue fundada en 2023 por Liang Wenfeng, apoyada por un fondo de inversión chino, con el objetivo de desarrollar modelos de lenguaje a gran escala (LLMs) de “peso abierto” para democratizar el acceso a IA avanzada. En enero de 2025 lanzó su modelo conversacional / chatbot al público, lo que lo convirtió en una alternativa real a otros sistemas de IA consolidados.')">DeepSeek</div>
+</aside>
+
+<main id="contenido">
+    <h2>Bienvenido</h2>
+    <p>Selecciona una inteligencia artificial para ver su información.</p>
+</main>
+
+<footer>
+    © Página de Inteligencia Artificial — 2025
+</footer>
+
+<script>
+function mostrar(texto){
+    document.getElementById("contenido").innerHTML = `<h2>Información</h2><p>${texto}</p>`;
+}
+</script>
+
+</body>
+</html>
