@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <link rel ="stylesheet" href="style/main.css" />
+  <link rel ="stylesheet" href="style/normalize.css"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario Completo</title>
+</head>
+<body>
+  <img src="https://cdn-icons-png.freepik.com/512/5351/5351812.png" alt="Logo" width="100" />
+  <h1>Formulario Completo</h1>
+
+  <form method="post"; class="form"; id="contacto">
+
+    <fieldset>
+      <legend>Información Personal</legend>
+      <label>Nombre: <input type="text"></label>
+      <label>Apellido: <input type="text" name="apellido"></label>
+      <label>Correo electrónico: <input type="email" name="email"></label>
+      <label>Contraseña: <input type="password" name="password"></label>
+      <label>Teléfono: <input type="tel" name="telefono"></label>
+      <label>Fecha de nacimiento: <input type="date" name="nacimiento"></label>
+      <label>Hora preferida: <input type="time" name="hora"></label>
+      <label>Número favorito: <input type="number" name="numero" min="0" max="100"></label>
+      <label>Color favorito: <input type="color" name="color"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Dirección</legend>
+      <label>Calle: <input type="text" name="calle"></label>
+      <label>Ciudad: <input type="text" name="ciudad"></label>
+      <label>Código postal: <input type="text" name="postal"></label>
+      <label>País:
+        <select name="pais">
+          <option value="">Seleccione...</option>
+          <option>Alemania</option>
+          <option>Argentina</option>
+          <option>Australia</option>
+          <option>Brasil</option>
+          <option>Canadá</option>
+          <option>Chile</option>
+          <option>China</option>
+          <option>Colombia</option>
+          <option>España</option>
+          <option>Estados Unidos</option>
+          <option>Francia</option>
+          <option>India</option>
+          <option>Italia</option>
+          <option>Japón</option>
+          <option>México</option>
+          <option>Perú</option>
+          <option>Reino Unido</option>
+          <option>Rusia</option>
+          <option>Uruguay</option>
+          <option>Venezuela</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferencias</legend>
+      <label>Género:</label>
+      <div class="check-group">
+        <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+        <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+        <label><input type="radio" name="genero" value="otro"> Otro</label>
+      </div>
+
+      <label>Intereses:</label>
+      <div class="check-group">
+        <label><input type="checkbox" name="intereses" value="tecnologia"> Tecnología</label>
+        <label><input type="checkbox" name="intereses" value="musica"> Música</label>
+        <label><input type="checkbox" name="intereses" value="deporte"> Deporte</label>
+        <label><input type="checkbox" name="intereses" value="arte"> Arte</label>
+      </div>
+
+      <label>Preferencia de idioma:
+        <select name="idioma" multiple>
+          <option>Español</option>
+          <option>Inglés</option>
+          <option>Francés</option>
+          <option>Alemán</option>
+          <option>Chino</option>
+          <option>Japonés</option>
+          <option>Ruso</option>
+          <option>Portugués</option>
+          <option>Italiano</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Archivos</legend>
+      <label>Subir archivo: <input type="file" name="archivo"></label>
+      <label>Subir imagen: <input type="file" accept="image/*" name="imagen"></label>
+      <label>Subir múltiples archivos: <input type="file" name="multi" multiple></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Otros Campos</legend>
+      <label>URL personal: <input type="url" name="url"></label>
+      <label>Rango de satisfacción: <input type="range" name="satisfaccion" min="0" max="10"></label>
+      <label>Semana del año: <input type="week" name="semana"></input></label>
+      <label>Mes favorito: <input type="month" name="mes"></label>
+      <label>Búsqueda interna: <input type="search" name="busqueda"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Comentarios</legend>
+      <label>Describe tu experiencia:
+        <textarea name="comentarios" rows="5"></textarea>
+      </label>
+    </fieldset>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Restablecer</button>
+    
+  </form>
+
+
+  <script>
+      const form = document.getElementById('contacto');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Campos de la sección Información Personal
+        const contacto = form.contacto.value;         // Nombre (requiere name="nombre" en HTML)
+        const apellido = form.apellido.value;     
+        const email = form.email.value;           
+
+        // Campo de la sección Dirección
+        const pais = form.pais.value;             // País (select)
+
+        console.log("Nombre:", nombre);
+        console.log("Apellido:", apellido);
+        console.log("Email:", email);
+        console.log("País seleccionado:", pais);
+        
+        // Aquí podrías enviar todos estos datos a tu servidor
+      });
+  </script>
+
+
+  <button type="button" onclick="window.alert('Buenasss, gracias por acceder a mi formulario')">Saludo</button>
+  <botton type="button" onclick="document.write('saludo con write')">Saludo con write</botton>
+  <button type="button" onclick="console.log('Formulario enviado')">Enviar con JS</button>
+</body>
+</html>

@@ -1,0 +1,80 @@
+    html, body{
+        margin: 0px;
+        padding: 0px;
+    }
+    <!--Buenas tardes-->
+    .ejercicio{ 
+        font-size: 19px;
+        background-color: rgb(96, 219, 147);
+        height: 20vh;
+        width: 55vw;
+        border:2px solid black;
+        border-radius: 45%; 
+        margin:auto;
+    }
+
+    .Bolas{
+        display: flex;
+    }
+    .bolita1{
+        background-color: yellow;
+        height: 20vh;
+        width: 25vw;
+        border-radius: 55%;
+        margin: 2%;
+        float: left;
+
+    }
+
+    .bolita2{
+        background-color: green;
+        height: 20vh;
+        width: 25vw;
+        border-radius: 55%;
+        margin: 2%
+        
+    }
+
+    .bolita3{
+        background-color:paleturquoise;
+        height: 20vh;
+        width: 25vw;
+        border-radius: 55%;
+        margin: 2%;
+        float:right
+       
+    }
+
+    .cuadrado1{ 
+        font-size: 19px;
+        background-color: red;
+        height: 15vh;
+        width: 30vw;
+        border:2px solid black;
+        float:left;
+        margin: 1%;
+    }
+
+    .cuadrado2{ 
+        font-size: 19px;
+        background-color: red;
+        height: 15vh;
+        width: 30vw;
+        border:2px solid black;
+        float:right;
+        margin:1%;
+    }
+
+
+
+
+
+    .ejercicio2{ 
+        font-size: 19px;
+        background-color: blueviolet;
+        height: 15vh;
+        width: 100vw;
+        border:2px solid black;
+        margin-top: 110px;
+        text-align: center;
+    }

@@ -1,0 +1,15 @@
+        #ultimoParrafo{
+            background-color: beige;
+            font-family:monospace
+
+        }
+        
+        p { color: green;
+            background-color: aquamarine;
+            font-size: 22px;
+
+        }
+        p, span {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        

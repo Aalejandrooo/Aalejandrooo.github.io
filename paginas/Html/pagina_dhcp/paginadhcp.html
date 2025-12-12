@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+    <link rel="stylesheet" href="style/main.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHCP: El Mago de las Direcciones IP 🧙‍♂️</title>
+    
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>DHCP: El Mago de las Direcciones IP 🧙‍♂️</h1>
+            <p>DHCP (Dynamic Host Configuration Protocol) es el protocolo de gestión de red que asigna automáticamente todos los parámetros de configuración necesarios a los clientes para conectarse y comunicarse eficientemente.</p>
+        </header>
+
+        <section id="introduccion">
+            <h2>1. ¿Qué es DHCP y para qué sirve?</h2>
+            
+            <p>DHCP significa **Dynamic Host Configuration Protocol**, un servicio fundamental que opera bajo un modelo cliente-servidor. Su propósito es **eliminar la configuración manual** de la red, un proceso largo y propenso a errores.</p>
+
+            <div class="quote-box">
+                <p><strong>Origen:</strong> DHCP desciende directamente del protocolo **BOOTP (Bootstrap Protocol)**, pero mejoró su funcionalidad al añadir la capacidad crítica de la asignación dinámica.</p>
+            </div>
+            
+            <h3>Parámetros esenciales que DHCP configura:</h3>
+            <ul>
+                <li>**Dirección IP:** La identidad digital única.</li>
+                <li>**Máscara de Red:** Define la subred.</li>
+                <li>**Puerta de Enlace (Gateway):** Dirección del router para salir de la red local.</li>
+                <li>**Servidores DNS (Domain Name Server):** Para resolver nombres de dominio (ej. google.com).</li>
+                <li>**Nombre de Dominio** y **Dirección WINS** (en implementaciones específicas).</li>
+            </ul>
+        </section>
+
+        <section id="funcionamiento">
+            <h2>2. La Danza DORA: Descubrimiento, Oferta, Solicitud, Reconocimiento</h2>
+            <p>El funcionamiento de DHCP se basa en un intercambio de mensajes de cuatro pasos conocido como el proceso **DORA**. Es vital saber que, al carecer de IP inicial, la comunicación se realiza por **difusión (Broadcast)**.</p>
+            
+            <div class="quote-box">
+                <p>Los mensajes DHCP utilizan el protocolo **UDP**. El **servidor** escucha en el **puerto 67** y el **cliente** recibe respuestas en el **puerto 68**.</p>
+            </div>
+
+            <h3>Etapas de la Negociación (DORA)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paso</th>
+                        <th>Mensaje</th>
+                        <th>Dirección</th>
+                        <th>Detalles Esenciales</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>**1. Descubrimiento**</td>
+                        <td>**DHCPDISCOVER**</td>
+                        <td>**Broadcast**</td>
+                        <td>El cliente utiliza IP de origen `0.0.0.0` e IP/MAC de destino `255.255.255.255`/`FF:FF:FF:FF:FF:FF`.</td>
+                    </tr>
+                    <tr>
+                        <td>**2. Oferta**</td>
+                        <td>**DHCPOFFER**</td>
+                        <td>Broadcast/Unicast</td>
+                        <td>El servidor propone una Dirección IP y condiciones de la concesión (tiempo de préstamo).</td>
+                    </tr>
+                    <tr>
+                        <td>**3. Solicitud**</td>
+                        <td>**DHCPREQUEST**</td>
+                        <td>**Broadcast**</td>
+                        <td>El cliente acepta la IP y notifica a todos los servidores para que retiren sus ofertas.</td>
+                    </tr>
+                    <tr>
+                        <td>**4. Reconocimiento**</td>
+                        <td>**DHCPACK**</td>
+                        <td>Unicast/Broadcast</td>
+                        <td>El servidor confirma el préstamo y el cliente comienza a usar la configuración.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="concesiones">
+            <h2>3. ¿Cuánto dura mi IP? (Lease Time)</h2>
+            <p>La IP asignada es una **concesión temporal (lease time)** definida por el administrador. El sistema de concesiones permite la **reutilización de direcciones IP** y reduce el **coste administrativo** frente a la asignación manual.</p>
+            
+            <h3>Proceso de Renovación</h3>
+            <ul>
+                <li>**T1 (50% del Lease Time):** El cliente intenta contactar al servidor original (`DHCPREQUEST` unicast) para prorrogar el préstamo.</li>
+                <li>**T2 (87.5% del Lease Time):** Si no hay respuesta, el cliente lanza un `DHCPREQUEST` de difusión (*broadcast*) buscando cualquier servidor para renovar.</li>
+            </ul>
+
+            <h3>Reservas (Asignación Fija)</h3>
+            <div class="quote-box">
+                <p>Una **Reserva de DHCP** es la asignación de una IP fija a un cliente específico, identificándolo permanentemente por su **dirección física o MAC**. Esto mantiene la gestión centralizada y asegura que dispositivos críticos (ej. servidores) siempre tengan la misma IP.</p>
+            </div>
+        </section>
+
+        <section id="implementacion">
+            <h2>4. Implementación y Escenarios: DHCP más allá de la Red Local</h2>
+            <p>La configuración básica de DHCP se centra en definir el **Ámbito (Scope)**, que es el conjunto administrado de direcciones IP. Dentro del ámbito, se definen los **Rangos (Pools)** de IPs asignables y las **Exclusiones** (IPs estáticas que DHCP no debe prestar).</p>
+            
+            <h3>Agente de Retransmisión (DHCP Relay Agent)</h3>
+            <p>Cuando el cliente y el servidor DHCP están en **subredes diferentes**, los mensajes DHCPDISCOVER (broadcast) no atraviesan el router. El **DHCP Relay Agent** (generalmente implementado en el router) convierte este mensaje de difusión en un mensaje de **unidifusión (unicast)** dirigido a la IP del servidor DHCP remoto, permitiendo la comunicación.</p>
+
+            <h3>Comandos de Gestión del Cliente</h3>
+            <p>El administrador puede forzar la interacción del cliente con el servidor usando:</p>
+            <pre><code># Comando para liberar la concesión de IP actual
+ipconfig /release
+
+# Comando para forzar un nuevo ciclo DORA (solicitar nueva IP)
+ipconfig /renew</code></pre>
+        </section>
+
+        <section id="seguridad">
+            <h2>5. Problemas y Seguridad: Protegiendo su Red del Mal Uso de DHCP</h2>
+            
+            <h3>⚠️ Conflictos de Conectividad</h3>
+            <ul>
+                <li>**APIPA:** Si el cliente no obtiene IP del servidor, un PC con Windows se autoasigna una IP en el rango **169.254.0.0/16 (APIPA)**. Esta dirección solo permite comunicación local, no acceso a internet.</li>
+                <li>**Agotamiento de DHCP (DHCP Exhaustion):** Un ataque donde un atacante consume rápidamente todas las direcciones IP disponibles, causando una **Denegación de Servicio (DoS)** a los nuevos clientes.</li>
+            </ul>
+
+            <h3>🛡️ Medidas de Seguridad Clave</h3>
+            <p>La suplantación del servidor DHCP (*spoofing*) es un riesgo crítico. Para mitigarlo, se utiliza:</p>
+            <ul>
+                <li>**Autorización de Servidores DHCP:** En entornos como Active Directory, los servidores deben tener permiso explícito para operar.</li>
+                <li>**DHCP Snooping:** Una función de seguridad en *switches* que solo permite el tráfico DHCP que proviene de puertos configurados como **confiables**.</li>
+                <li>**DHCP Guard:** Medida en entornos virtualizados que evita específicamente que las máquinas virtuales puedan suplantar servidores DHCP.</li>
+            </ul>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusión: La Columna Vertebral de la Conectividad</h2>
+            <p>El servicio **DHCP** es un pilar fundamental para cualquier red **TCP/IP**. Al centralizar y automatizar la gestión de las identidades de red, garantiza que la infraestructura sea **robusta, eficiente y escalable**, reduciendo significativamente la carga administrativa y los errores de configuración.</p>
+        </section>
+
+        <section id="extras">
+            <h2>🎁 Extras Educativos: Glosario de Términos Clave</h2>
+            <dl class="glossary">
+                <dt>DHCP Relay Agent</dt>
+                <dd>Dispositivo que reenvía solicitudes DHCP broadcast a un servidor ubicado en otra subred.</dd>
+                
+                <dt>Lease Time (Tiempo de Concesión)</dt>
+                <dd>El periodo limitado que un cliente tiene permitido utilizar la dirección IP asignada.</dd>
+
+                <dt>DORA</dt>
+                <dd>Acrónimo del proceso de 4 pasos para la obtención de IP: Discover, Offer, Request, Acknowledge.</dd>
+
+                <dt>Puertos UDP 67/68</dt>
+                <dd>Puertos de red utilizados para la comunicación entre el servidor (67) y el cliente (68) DHCP.</dd>
+                
+                <dt>Reserva</dt>
+                <dd>Asignación de una IP fija a un cliente mediante su dirección **MAC**.</dd>
+            </dl>
+        </section>
+    </div>
+</body>
+</html>
+

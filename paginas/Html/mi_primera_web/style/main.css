@@ -1,0 +1,29 @@
+
+       
+       
+            p{font-size: 16px;font-family:arial;background-color: aquamarine;color: pink;}
+            
+            table, th, td {border:2px solid rgb(7, 145, 41);}
+            
+            .apw{font-family:sans-serif;
+                    background-color: pink;
+                        color: darkgreen;
+                            font-size: 20px;
+
+             }
+
+            .dasp{font-family: sans-serif;
+                    background-color: red;
+                      color: aqua;
+            }
+
+            .opt{font-family: sans-serif;
+                    background-color: blueviolet;
+                      color: beige;
+            }
+
+            .mme{font-family: sans-serif;
+                    background-color: rgb(18, 118, 212);
+                      color: rgb(175, 175, 11);
+            }
+
